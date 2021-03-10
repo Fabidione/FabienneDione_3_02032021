@@ -1,0 +1,77 @@
+/*generalites*/
+
+body
+{
+    margin: 0;
+    padding: 0;
+}
+body,html
+{
+    max-width: 600px;
+    height: 100%;
+}
+* 
+{
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+/*les variables*/
+$policetitre:'Shrikhand', sans-serif;
+$policebody:'Roboto', sans-serif;
+$colorprimaire:#9356DC;
+$colorsecondaire:#FF79DA;
+$colortertiaire:#99E2D0;
+$backgroundcolor:#F2F2F2;
+
+
+/*header*/
+.header{
+    &__logo{
+        font-family: $policetitre;
+        text-align: center;
+        padding: 15px 0px 15px 0px;
+        font-size: 1.7em;
+    }
+    &__localisation{
+        text-align: center;
+        font-family: $policebody;
+        padding: 1px 0px 1px 0px;
+        background-color:darken($backgroundcolor, 5%);
+    }
+}
+.champ
+{
+    border: transparent;
+    background-color:darken($backgroundcolor, 5%);
+}
+::placeholder
+{
+    color:black;
+    padding-left: 10px;
+}
+.presentation{
+    text-align: center;
+    background-color: $backgroundcolor;
+    padding: 30px 0px 50px 0px;
+    font-family: $policebody;
+    &__res{
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+    }
+    &__dec{
+        margin-bottom: 30px;
+    }
+    &__exp a{
+        text-decoration: none;
+        border: 1px solid $colorprimaire;
+        border-radius: 20px;
+        color: white;
+        background-color:#9356DC;
+        padding: 10px;
+    }
+
+}
+
+
