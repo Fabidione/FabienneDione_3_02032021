@@ -16,6 +16,8 @@ body,html
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
+
+
 /*les variables*/
 $policetitre:'Shrikhand', sans-serif;
 $policebody:'Roboto', sans-serif;
@@ -25,25 +27,99 @@ $colortertiaire:#99E2D0;
 $backgroundcolor:#F2F2F2;
 
 
-/*header*/
+/*mixin*/
+@mixin resto-figure{
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 10px;
+    width: 290px;
+    margin-left: 15px;
+    box-shadow: 0px 0px 20px $backgroundcolor;
+    padding-bottom: 10px;
+}
+@mixin titre-resto{
+    display: flex;
+    flex-direction: row;
+}
+@mixin intitule-resto{
+    margin-left: 8px;
+    margin-top: 10px;
+}
+@mixin intitule-gras{
+    font-weight: bold;
+}
+@mixin coeur-resto{
+    margin-left: 120px;
+    margin-top: 20px;
+}
+@mixin presentation{
+    text-align: center;
+    background-color: $backgroundcolor;
+    padding: 30px 0px 50px 0px;
+    font-family: $policebody;
+}
+@mixin presentation-res{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+@mixin presentation-dec{
+    margin-bottom: 30px;
+}
+@mixin presentation-exp {
+    text-decoration: none;
+    border: 1px solid $colorprimaire;
+    border-radius: 20px;
+    color: white;
+    background-color:#9356DC;
+    padding: 10px;
+}
+@mixin restaurant{
+    background-color: $backgroundcolor;
+    font-family: $policebody;
+    padding: 30px 0px 30px 0px;
+} 
+@mixin restaurant-titre {
+    margin-left: 15px;
+}
+
+
+
+/*extensions*/
+%typography-images{
+    width: 290px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+%typography-logo{
+    text-align: center;
+    font-family: $policetitre;
+    padding: 15px 0px 15px 0px;
+    font-size: 1.7em;
+}
+%typography-localisation{
+    text-align: center;
+    font-family: $policebody;
+    padding: 1px 0px 1px 0px;
+    background-color:darken($backgroundcolor, 5%);
+}
+
+
+/*body*/
 .header{
     &__logo{
-        text-align: center;
-        font-family: $policetitre;
-        padding: 15px 0px 15px 0px;
-        font-size: 1.7em;
+        @extend %typography-logo;
     }
     &__localisation{
-        text-align: center;
-        font-family: $policebody;
-        padding: 1px 0px 1px 0px;
-        background-color:darken($backgroundcolor, 5%);
+        @extend %typography-localisation
     }
 }
 .champ
 {
     border: transparent;
     background-color:darken($backgroundcolor, 5%);
+
 }
 ::placeholder
 {
@@ -51,65 +127,102 @@ $backgroundcolor:#F2F2F2;
     padding-left: 10px;
 }
 .presentation{
-    text-align: center;
-    background-color: $backgroundcolor;
-    padding: 30px 0px 50px 0px;
-    font-family: $policebody;
+    @include presentation;
     &__res{
-        font-weight: bold;
-        margin-bottom: 10px;
-        font-size: 1.2em;
+        @include presentation-res;
     }
     &__dec{
-        margin-bottom: 30px;
+        @include presentation-dec;
     }
     &__exp a{
-        text-decoration: none;
-        border: 1px solid $colorprimaire;
-        border-radius: 20px;
-        color: white;
-        background-color:#9356DC;
-        padding: 10px;
+        @include presentation-exp;
     }
 }
 .restaurant{
-    background-color: $backgroundcolor;
-    font-family: $policebody;
+    @include restaurant;
     &__titre{
-        margin-left: 15px;
-        padding-top: 30px;
+        @include restaurant-titre;
     }
     &__palette figure{
-        border: 1px solid white;
-        background-color: white;
-        border-radius: 10px;
-        width: 290px;
-        margin-left: 15px;
-        box-shadow: 0px 0px 20px $backgroundcolor;
-        padding-bottom: 10px;
-
+        @include resto-figure;
+    }
+    &__note figure{
+        @include resto-figure;
+    }
+    &__française figure{
+        @include resto-figure;
+    }
+    &__délice figure{
+        @include resto-figure;
     }
 }
 .titre-palette{
-    display: flex;
-    flex-direction: row;
+    @include titre-resto;
     &__intitule{
-        margin-left: 8px;
-        margin-top: 10px;
+        @include intitule-resto;
     }
     &__intitule--bold{
-        font-weight: bold;
+        @include intitule-gras;
     }
     &__coeur{
-        margin-left: 120px;
-        margin-top: 20px;
+        @include coeur-resto;
     }
 }
-
+.titre-note{
+    @include titre-resto;
+    &__intitule{
+        @include intitule-resto;
+    }
+    &__intitule--bold{
+        @include intitule-gras;
+    }
+    &__coeur{
+        @include coeur-resto;
+    }
+}
+.titre-française{
+    @include titre-resto;
+    &__intitule{
+        @include intitule-resto;
+    }
+    &__intitule--bold{
+        @include intitule-gras;
+    }
+    &__coeur{
+        @include coeur-resto;
+    }
+}
+.titre-délice{
+    @include titre-resto;
+    &__intitule{
+        @include intitule-resto;
+    }
+    &__intitule--bold{
+        @include intitule-gras;
+    }
+    &__coeur{
+        @include coeur-resto;
+    }
+}
 .image1,.image2,.image3,.image4{
-    width: 290px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px 10px 0px 0px;
+    @extend %typography-images;
+}
 
+
+/*footer*/
+.foot{
+    background-color:darken($backgroundcolor, 75%);
+    color: white;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    font-family: $policebody;
+    &__titre{
+        margin-top: 0px;
+        padding:20px 0px 20px 0px;
+        font-family: $policetitre;
+    }
+    &__proposer{
+        display: flex;
+        flex-direction: row;
+    }
 }
