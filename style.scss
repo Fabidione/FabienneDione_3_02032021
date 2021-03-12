@@ -79,11 +79,22 @@ $backgroundcolor:#F2F2F2;
     font-family: $policebody;
     padding: 30px 0px 30px 0px;
 } 
-@mixin restaurant-titre {
-    margin-left: 15px;
+@mixin foot{
+    background-color:darken($backgroundcolor, 75%);
+    color: white;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    font-family: $policebody;
 }
-
-
+@mixin foot-titre{
+    margin-top: 0px;
+    padding:20px 0px 20px 0px;
+    font-family: $policetitre;
+}
+@mixin foot-contact{
+    color: white;
+    text-decoration: none;
+}
 
 /*extensions*/
 %typography-images{
@@ -104,7 +115,14 @@ $backgroundcolor:#F2F2F2;
     padding: 1px 0px 1px 0px;
     background-color:darken($backgroundcolor, 5%);
 }
+%typography-flex{
+    display: flex;
+    flex-direction: row;
+}
+%typography-margebody{
+    margin-left: 15px;
 
+}
 
 /*body*/
 .header{
@@ -138,10 +156,36 @@ $backgroundcolor:#F2F2F2;
         @include presentation-exp;
     }
 }
+.fonctionnement{
+    padding: 40px 0px 50px 0px;
+    @extend %typography-margebody;
+    &__titre{
+        padding-bottom: 20px;
+    }
+    &__choisissez{
+        @extend %typography-flex;
+        border: 1px solid gray;
+    }
+    &__choisissez p{
+        margin-top: 0px;
+        margin-left: 30px;
+    }
+    &__choisissez i{
+        margin-left: 30px;
+    }
+}
+
+
+
+
+
+
+
+
 .restaurant{
     @include restaurant;
     &__titre{
-        @include restaurant-titre;
+        @extend %typography-margebody;
     }
     &__palette figure{
         @include resto-figure;
@@ -211,18 +255,26 @@ $backgroundcolor:#F2F2F2;
 
 /*footer*/
 .foot{
-    background-color:darken($backgroundcolor, 75%);
-    color: white;
-    padding-bottom: 30px;
-    padding-left: 15px;
-    font-family: $policebody;
+    @include foot;
     &__titre{
-        margin-top: 0px;
-        padding:20px 0px 20px 0px;
-        font-family: $policetitre;
+        @include foot-titre;
     }
     &__proposer{
-        display: flex;
-        flex-direction: row;
+        @extend %typography-flex;
+    }
+    &__proposer p{
+        margin-left: 10px;
+        margin-top: 0px;
+    }
+    &__devenir{
+        @extend %typography-flex;
+    }
+    &__devenir p{
+        margin-left: 10px;
+        margin-top: -3px;
+        margin-bottom: 0px;
+    }
+    &__contact{
+        @include foot-contact;
     }
 }
