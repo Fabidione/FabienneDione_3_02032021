@@ -7,7 +7,7 @@ body
 }
 body,html
 {
-    max-width: 320px;
+    max-width: 600px;
     height: 100%;
 }
 * 
@@ -21,12 +21,31 @@ body,html
 /*les variables*/
 $policetitre:'Shrikhand', sans-serif;
 $policebody:'Roboto', sans-serif;
+$colorprimaire:#9356DC;
+$colorsecondaire:#FF79DA;
+$colortertiaire:#99E2D0;
+$backgroundcolor:#F2F2F2;
 
 
 
 /*mixin*/
-
-
+@mixin foot{
+    background-color:darken($backgroundcolor, 75%);
+    color: white;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    font-family: $policebody;
+}
+@mixin foot-titre{
+    margin-top: 0px;
+    padding:20px 0px 20px 0px;
+    font-family: $policetitre;
+}
+@mixin foot-contact{
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+}
 /*extensions*/
 %typography-logo{
     text-align: center;
@@ -39,7 +58,7 @@ $policebody:'Roboto', sans-serif;
     display: flex;
     flex-direction: row;
 }
-%typography-margebody{
+%typography-margebody{  
     margin-left: 20px;
 }
 %typography-images{
@@ -60,6 +79,105 @@ $policebody:'Roboto', sans-serif;
        @extend %typography-margebody;
     }
 }
-.palette-image{
-    @extend %typography-images;
+.image{
+    height: 170px;
+}
+.palette-image{ 
+    max-width: 100%;
+    height: 210px;
+    width: 100%;
+    object-fit: cover;
+}
+.palette{
+    margin-top: 0px;
+    padding-bottom: 40px;
+    border-radius: 40px 40px 0px 0px;
+    z-index: 1;
+    position: relative;
+    background-color:#F0F3F5;
+    &__commander{
+        text-align: center;
+        border: 1px solid $colorprimaire;
+        border-radius: 40px;
+        color: white;
+        background-color:#9356DC;
+        padding: 20px;
+        width: 200px;
+        margin-left: 30px;
+    }
+    &__titre{
+        display: flex;
+        flex-direction: row;
+        font-family: $policetitre;
+        margin-left: 20px;
+    }
+    i{
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+}
+.palette__entrees{
+    font-family: $policebody;
+    margin-left: 20px;
+    &--intitule{
+        display: flex;
+        border: 1px solid white;
+        margin:20px 20px 20px 0px;
+        background-color: white;
+        border-radius:10px ;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+    }
+}
+.palette__plats{
+    font-family: $policebody;
+    &--intitule{
+        display: flex;
+        border: 1px solid white;
+        margin:20px 20px 20px 0px;
+        background-color: white;
+        border-radius:10px ;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1)
+    }
+}
+.palette__desserts{
+    font-family: $policebody;
+    &--intitule{
+        display: flex;
+        border: 1px solid white;
+        margin:20px 20px 20px 0px;
+        background-color: white;
+        border-radius:10px ;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1)
+    }
+}
+.prix{
+margin-top: 35px;
+margin-left: 80px;
+}
+.titre{
+    padding-left: 8px;
+}
+.foot{
+    @include foot;
+    &__titre{
+        @include foot-titre;
+    }
+    &__proposer{
+        @extend %typography-flex;
+    }
+    &__proposer p{
+            margin-left: 10px;
+            margin-top: 0px;
+        }
+    &__devenir{
+        @extend %typography-flex;
+    }
+    &__devenir p{
+        margin-left: 10px;
+        margin-top: -3px;
+        margin-bottom: 0px;
+    }
+    &__contact{
+        @include foot-contact;
+    }
 }
