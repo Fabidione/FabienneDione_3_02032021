@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./public/css/style.css ./sass/pages.scss:./public/css/pages.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fabidione/FabienneDione_3_02032021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fabidione/FabienneDione_3_02032021/issues"
+  },
+  "homepage": "https://github.com/Fabidione/FabienneDione_3_02032021#readme"
+}
