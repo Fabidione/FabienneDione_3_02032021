@@ -1,0 +1,49 @@
+/*extensions*/
+%typography-flexstyle{
+    display: flex;
+    flex-direction: row;
+}
+
+/*mixin*/
+@mixin resto-figure{
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 10px;
+    width: 290px;
+    margin-left: 15px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+@mixin intitule-resto{
+    margin-left: 8px;
+    margin-top: 10px;
+}
+@mixin intitule-gras{
+    font-weight: bold;
+}
+@mixin coeur-palettenote{
+    margin-left: 120px;
+    margin-top: 5px;
+    color: #7e7e7e;
+}
+
+@mixin intitule {
+    border: 1px solid white;
+    background-color: white;
+    margin:20px 20px 20px 0px;
+    border-radius:10px ;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+    font-family: $policebody;
+}
+@mixin margebodystyle{
+    margin-left: 15px;
+
+}
+@mixin margin-responsive{
+    margin-left: 40px;
+    width: 320px; 
+}
+@mixin largeur-responsive{
+    width: 420px;    
+
+}
