@@ -1,0 +1,263 @@
+@import "./utils.scss";
+@import "./base.scss";
+
+/*body*/
+.header1{
+    display: flex;
+    flex-direction: column;
+    &__logo{
+        text-align: center;
+        font-family: $policetitre;
+        padding: 15px 0px 15px 0px;
+        font-size: 1.7em;
+    }
+    &__localisation{
+        text-align: center;
+        font-family: $policebody;
+        padding: 1px 0px 1px 0px;
+        background-color:darken($backgroundcolor, 5%);
+    }
+}
+.champ
+{
+    border: transparent;
+    background-color:darken($backgroundcolor, 5%);
+
+}
+::placeholder
+{
+    color:black;
+    padding-left: 10px;
+}
+.presentation{
+    text-align: center;
+    background-color: $backgroundcolor;
+    padding: 30px 0px 50px 0px;
+    font-family: $policebody;
+    &__res{
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+    }
+    &__dec{
+        margin-bottom: 30px;
+    }
+    &__exp a{
+        text-decoration: none;
+        border: 1px solid $colorprimaire;
+        border-radius: 20px;
+        color: white;
+        background-color:#9356DC;
+        padding: 10px;
+    }
+}
+  .fonctionnement {
+    margin: 60px 10px 60px 15px;
+    font-family: $policebody;
+    @media (min-width:1024px){
+        margin-left: 40px;
+        margin-right: 20px;
+    }
+    &__stick{
+        background-color: $colorprimaire;
+        color: white;
+        position: relative;
+        right: 30px;
+        top:0px;
+        padding: 8px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+    }
+    &__title {
+      @media (min-width:1024px){
+          width: 100%;  
+    }
+    }
+    &__lesbutons{
+      margin: 0;
+      padding: 0;
+    }
+        & ol{
+            padding-left: 0px;
+            @media (min-width:1024px){
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    &__bouton{
+      padding: 20px;
+      margin: 16px 0 16px 12px;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.125);
+      border-radius:20px;
+      background-color: #f6f6f6;
+      display: flex;
+      align-items: center;
+      }
+    &__image {
+      margin-right: 10px;
+      color: #7e7e7e;
+    }
+  }
+.restaurants{
+    background-color: $backgroundcolor;
+    font-family: $policebody;
+    padding: 30px 0px 30px 0px;
+    @media (min-width:500px){
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    &__stick{
+        background-color: $colortertiaire;
+        color: darken($colortertiaire, 50%);
+        position: relative;
+        right: -200px;
+        top:-135px;
+        padding: 8px;
+        border-radius: 2px;
+        @media (min-width:380px){
+            right: -230px;
+        } 
+        @media (min-width:500px){
+            right: -330px;
+        }
+    }
+    &__titre{
+        @include margebodystyle;
+        @media (min-width:380px){
+            margin-left: 40px;
+        }  
+        @media (min-width:500px){
+            width: 100%;
+        }
+    }
+    &__palette figure{
+        @include resto-figure;
+        @media (min-width:380px){
+            @include margin-responsive;   
+        }  
+        @media (min-width:500px){
+            @include largeur-responsive;
+        } 
+        }
+    &__note figure{
+        @include resto-figure;
+        @media (min-width:380px){
+            @include margin-responsive;   
+        }  
+        @media (min-width:500px){
+            @include largeur-responsive;
+        } 
+    }
+    &__française figure{
+        @include resto-figure;
+        @media (min-width:380px){
+            @include margin-responsive;  
+        } 
+        @media (min-width:500px){
+            @include largeur-responsive;
+        }  
+        
+    }
+    &__délice figure{
+        @include resto-figure;
+        @media (min-width:380px){
+            @include margin-responsive;   
+        } 
+        @media (min-width:500px){
+            @include largeur-responsive;
+        } 
+    }
+}  
+.titre-palette{
+    @extend %typography-flexstyle;
+    &__intitule{
+        margin-top: -10px;
+        margin-left: 8px;
+    }
+    &__intitule--bold{
+        @include intitule-gras;
+    }
+    &__coeur{
+        @include coeur-palettenote;
+        @media (min-width:380px){
+            margin-left: 150px;
+        } 
+        @media (min-width:500px){
+            margin-left: 250px;
+        } 
+    }
+}
+.titre-note{
+    @extend %typography-flexstyle;
+    &__intitule{
+        margin-top: -10px;
+        margin-left: 8px;
+    }
+    &__intitule--bold{
+        @include intitule-gras;
+    }
+    &__coeur{
+        @include coeur-palettenote;
+        @media (min-width:380px){
+            margin-left: 150px;
+        } 
+        @media (min-width:500px){
+            margin-left: 250px;
+        }
+    }
+}
+.titre-française{
+    @extend %typography-flexstyle;
+    &__intitule{
+        @include intitule-resto;
+    }
+    &__intitule--bold{
+        @include intitule-gras;
+    }
+    &__coeur{
+        margin-left: 150px;
+        margin-top: 20px;
+        color: #7e7e7e;
+        @media (min-width:380px){
+            margin-left: 150px;
+        } 
+        @media (min-width:500px){
+            margin-left: 250px;
+        }
+    }
+}
+.titre-délice{
+    @extend %typography-flexstyle;
+    &__intitule{
+        @include intitule-resto;
+    }
+    &__intitule--bold{
+        @include intitule-gras;
+    }
+    &__coeur{
+        margin-left: 140px;
+        margin-top: 20px;
+        color: #7e7e7e;
+        @media (min-width:380px){
+            margin-left: 150px;
+        } 
+        @media (min-width:500px){
+            margin-left: 250px;
+        }
+    }
+}
+.image1,.image2,.image3,.image4{
+    width: 290px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px; 
+    @media (min-width:380px){
+        width: 320px;    
+    } 
+    @media (min-width:500px){
+        width: 420px;    
+    }  
+}
