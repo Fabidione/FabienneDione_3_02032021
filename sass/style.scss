@@ -1,6 +1,5 @@
 @import "./utils.scss";
 @import "./base.scss";
-
 /*body*/
 .header1{
     display: flex;
@@ -10,6 +9,9 @@
         font-family: $policetitre;
         padding: 15px 0px 15px 0px;
         font-size: 1.7em;
+        box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+        margin-bottom: 6px;
+
     }
     &__localisation{
         text-align: center;
@@ -22,6 +24,8 @@
 {
     border: transparent;
     background-color:darken($backgroundcolor, 5%);
+    font-size: 1em;
+
 
 }
 ::placeholder
@@ -41,6 +45,11 @@
     }
     &__dec{
         margin-bottom: 30px;
+        font-size: 1.2em;
+        font-weight: 300;
+        color: gray;
+
+
     }
     &__exp a{
         text-decoration: none;
@@ -48,7 +57,7 @@
         border-radius: 20px;
         color: white;
         background-color:#9356DC;
-        padding: 10px;
+        padding: 10px 20px 10px 20px;
     }
 }
   .fonctionnement {
@@ -96,7 +105,7 @@
       align-items: center;
       }
     &__image {
-      margin-right: 10px;
+      margin-right: 25px;
       color: #7e7e7e;
     }
   }
@@ -108,6 +117,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
     }
     &__stick{
         background-color: $colortertiaire;
@@ -131,6 +141,8 @@
         }  
         @media (min-width:500px){
             width: 100%;
+            text-align: center;
+
         }
     }
     &__palette figure{
@@ -222,7 +234,7 @@
         margin-top: 20px;
         color: #7e7e7e;
         @media (min-width:380px){
-            margin-left: 150px;
+            margin-left: 180px;
         } 
         @media (min-width:500px){
             margin-left: 250px;
@@ -242,7 +254,7 @@
         margin-top: 20px;
         color: #7e7e7e;
         @media (min-width:380px){
-            margin-left: 150px;
+            margin-left: 170px;
         } 
         @media (min-width:500px){
             margin-left: 250px;

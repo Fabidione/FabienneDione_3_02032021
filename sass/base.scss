@@ -14,20 +14,6 @@ body
     margin: 0;
     padding: 0;
 }
-body,html
-{
-    max-width: 600px;
-    height: 100%;
-    @media (max-width:1024px){
-        max-width: 1024px;    
-    }  
-    @media (max-width:1400px){
-        max-width: 1400px;    
-    }  
-    @media (max-width:1600px){
-        max-width: 1600px;    
-    }  
-}
 * 
 {
     -webkit-box-sizing: border-box;
@@ -42,6 +28,10 @@ body,html
     padding-bottom: 30px;
     padding-left: 15px;
     font-family: $policebody;
+    @media (min-width:380px){        
+        text-align: center;
+        padding-left: 0px;
+    }
     &__titre{
         margin-top: 0px;
         padding:20px 0px 20px 0px;
@@ -49,6 +39,11 @@ body,html
     }
     &__proposer{
         @extend %typography-flexstyle;
+        @media (min-width:380px){
+        justify-content: center;
+        padding-left: 0px;
+
+        }
     }
     &__proposer p{
             margin-left: 10px;
@@ -56,6 +51,12 @@ body,html
         }
     &__devenir{
         @extend %typography-flexstyle;
+        @media (min-width:380px){
+        justify-content: center;
+        padding-left: 0px;
+
+
+        }
     }
     &__devenir p{
         margin-left: 10px;
