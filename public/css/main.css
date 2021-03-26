@@ -5,19 +5,6 @@ body {
   margin: 0;
   padding: 0; }
 
-body, html {
-  max-width: 600px;
-  height: 100%; }
-  @media (max-width: 1024px) {
-    body, html {
-      max-width: 1024px; } }
-  @media (max-width: 1400px) {
-    body, html {
-      max-width: 1400px; } }
-  @media (max-width: 1600px) {
-    body, html {
-      max-width: 1600px; } }
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -30,13 +17,25 @@ body, html {
   padding-bottom: 30px;
   padding-left: 15px;
   font-family: "Roboto", sans-serif; }
+  @media (min-width: 380px) {
+    .foot {
+      text-align: center;
+      padding-left: 0px; } }
   .foot__titre {
     margin-top: 0px;
     padding: 20px 0px 20px 0px;
     font-family: "Shrikhand", sans-serif; }
+  @media (min-width: 380px) {
+    .foot__proposer {
+      justify-content: center;
+      padding-left: 0px; } }
   .foot__proposer p {
     margin-left: 10px;
     margin-top: 0px; }
+  @media (min-width: 380px) {
+    .foot__devenir {
+      justify-content: center;
+      padding-left: 0px; } }
   .foot__devenir p {
     margin-left: 10px;
     margin-top: -3px;
@@ -155,19 +154,6 @@ body {
   margin: 0;
   padding: 0; }
 
-body, html {
-  max-width: 600px;
-  height: 100%; }
-  @media (max-width: 1024px) {
-    body, html {
-      max-width: 1024px; } }
-  @media (max-width: 1400px) {
-    body, html {
-      max-width: 1400px; } }
-  @media (max-width: 1600px) {
-    body, html {
-      max-width: 1600px; } }
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -180,13 +166,25 @@ body, html {
   padding-bottom: 30px;
   padding-left: 15px;
   font-family: "Roboto", sans-serif; }
+  @media (min-width: 380px) {
+    .foot {
+      text-align: center;
+      padding-left: 0px; } }
   .foot__titre {
     margin-top: 0px;
     padding: 20px 0px 20px 0px;
     font-family: "Shrikhand", sans-serif; }
+  @media (min-width: 380px) {
+    .foot__proposer {
+      justify-content: center;
+      padding-left: 0px; } }
   .foot__proposer p {
     margin-left: 10px;
     margin-top: 0px; }
+  @media (min-width: 380px) {
+    .foot__devenir {
+      justify-content: center;
+      padding-left: 0px; } }
   .foot__devenir p {
     margin-left: 10px;
     margin-top: -3px;
@@ -204,7 +202,9 @@ body, html {
     text-align: center;
     font-family: "Shrikhand", sans-serif;
     padding: 15px 0px 15px 0px;
-    font-size: 1.7em; }
+    font-size: 1.7em;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 6px; }
   .header1__localisation {
     text-align: center;
     font-family: "Roboto", sans-serif;
@@ -213,7 +213,8 @@ body, html {
 
 .champ {
   border: transparent;
-  background-color: #e5e5e5; }
+  background-color: #e5e5e5;
+  font-size: 1em; }
 
 ::placeholder {
   color: black;
@@ -229,14 +230,17 @@ body, html {
     margin-bottom: 10px;
     font-size: 1.2em; }
   .presentation__dec {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: gray; }
   .presentation__exp a {
     text-decoration: none;
     border: 1px solid #9356DC;
     border-radius: 20px;
     color: white;
     background-color: #9356DC;
-    padding: 10px; }
+    padding: 10px 20px 10px 20px; }
 
 .fonctionnement {
   margin: 60px 10px 60px 15px;
@@ -277,7 +281,7 @@ body, html {
     display: flex;
     align-items: center; }
   .fonctionnement__image {
-    margin-right: 10px;
+    margin-right: 25px;
     color: #7e7e7e; }
 
 .restaurants {
@@ -288,7 +292,8 @@ body, html {
     .restaurants {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap; } }
+      flex-wrap: wrap;
+      justify-content: center; } }
   .restaurants__stick {
     background-color: #99E2D0;
     color: #1b6150;
@@ -310,7 +315,8 @@ body, html {
         margin-left: 40px; } }
     @media (min-width: 500px) {
       .restaurants__titre {
-        width: 100%; } }
+        width: 100%;
+        text-align: center; } }
   .restaurants__palette figure {
     border: 1px solid white;
     background-color: white;
@@ -415,7 +421,7 @@ body, html {
   color: #7e7e7e; }
   @media (min-width: 380px) {
     .titre-française__coeur {
-      margin-left: 150px; } }
+      margin-left: 180px; } }
   @media (min-width: 500px) {
     .titre-française__coeur {
       margin-left: 250px; } }
@@ -431,7 +437,7 @@ body, html {
   color: #7e7e7e; }
   @media (min-width: 380px) {
     .titre-délice__coeur {
-      margin-left: 150px; } }
+      margin-left: 170px; } }
   @media (min-width: 500px) {
     .titre-délice__coeur {
       margin-left: 250px; } }
