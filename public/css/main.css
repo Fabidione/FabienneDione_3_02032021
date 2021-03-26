@@ -119,7 +119,8 @@ body {
 .prix {
   display: flex;
   justify-content: flex-end;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  margin-right: 10px; }
 
 .titre {
   padding-left: 8px;
@@ -240,7 +241,10 @@ body {
     border-radius: 20px;
     color: white;
     background-color: #9356DC;
-    padding: 10px 20px 10px 20px; }
+    padding: 10px 20px 10px 20px;
+    transition: transform 4000ms ease-in-out; }
+  .presentation a:hover {
+    background-color: #FF79DA; }
 
 .fonctionnement {
   margin: 60px 10px 60px 15px;
@@ -332,6 +336,9 @@ body {
     @media (min-width: 500px) {
       .restaurants__palette figure {
         width: 420px; } }
+  .restaurants a {
+    text-decoration: none;
+    color: black; }
   .restaurants__note figure {
     border: 1px solid white;
     background-color: white;
@@ -378,21 +385,23 @@ body {
       .restaurants__délice figure {
         width: 420px; } }
 
-.titre-palette__intitule {
-  margin-top: -10px;
-  margin-left: 8px; }
-.titre-palette__intitule--bold {
-  font-weight: bold; }
-.titre-palette__coeur {
-  margin-left: 120px;
-  margin-top: 5px;
-  color: #7e7e7e; }
-  @media (min-width: 380px) {
-    .titre-palette__coeur {
-      margin-left: 150px; } }
-  @media (min-width: 500px) {
-    .titre-palette__coeur {
-      margin-left: 250px; } }
+.titre-palette {
+  text-decoration: none; }
+  .titre-palette__intitule {
+    margin-top: -10px;
+    margin-left: 8px; }
+  .titre-palette__intitule--bold {
+    font-weight: bold; }
+  .titre-palette__coeur {
+    margin-left: 120px;
+    margin-top: 5px;
+    color: #7e7e7e; }
+    @media (min-width: 380px) {
+      .titre-palette__coeur {
+        margin-left: 150px; } }
+    @media (min-width: 500px) {
+      .titre-palette__coeur {
+        margin-left: 250px; } }
 
 .titre-note__intitule {
   margin-top: -10px;
@@ -424,7 +433,7 @@ body {
       margin-left: 180px; } }
   @media (min-width: 500px) {
     .titre-française__coeur {
-      margin-left: 250px; } }
+      margin-left: 270px; } }
 
 .titre-délice__intitule {
   margin-left: 8px;
@@ -440,7 +449,7 @@ body {
       margin-left: 170px; } }
   @media (min-width: 500px) {
     .titre-délice__coeur {
-      margin-left: 250px; } }
+      margin-left: 270px; } }
 
 .image1, .image2, .image3, .image4 {
   width: 290px;
