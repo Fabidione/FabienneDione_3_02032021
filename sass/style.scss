@@ -1,5 +1,6 @@
 @import "./utils.scss";
 @import "./base.scss";
+@import "./animations.scss";
 /*body*/
 .header1{
     display: flex;
@@ -49,19 +50,21 @@
         font-weight: 300;
         color: gray;
     }
-    &__exp a{
+    &__exp{
+        & a{
         text-decoration: none;
         border: 1px solid $colorprimaire;
         border-radius: 20px;
         color: white;
         background-color:$colorprimaire;
         padding: 10px 20px 10px 20px;
-        transition: transform 4000ms ease-in-out;
-    }
+        }  
         & a:hover{
-            background-color: $colorsecondaire;
+            animation: bouton-explorer 4000ms infinite;
         }
-}
+    } 
+}         
+
   .fonctionnement {
     margin: 60px 10px 60px 15px;
     font-family: $policebody;
@@ -97,6 +100,9 @@
                 justify-content: space-between;
             }
         }
+        & li:hover{
+            animation: bouton-fonctionnement 4000ms infinite;
+        }
     &__bouton{
       padding: 20px;
       margin: 16px 0 16px 12px;
@@ -105,12 +111,14 @@
       background-color: #f6f6f6;
       display: flex;
       align-items: center;
+      opacity: 1;
       }
     &__image {
       margin-right: 25px;
       color: #7e7e7e;
     }
   }
+
 .restaurants{
     background-color: $backgroundcolor;
     font-family: $policebody;
@@ -202,16 +210,21 @@
         @include intitule-gras;
     }
     &__coeur{
+
         @include coeur-palettenote;
         @media (min-width:380px){
-            margin-left: 150px;
+            margin-left: 140px;
         } 
         @media (min-width:500px){
-            margin-left: 250px;
+            margin-left: 240px;
          
         }
     }
 }
+.fas.fa-heart{
+color: transparent;
+}
+
 .titre-note{
     @extend %typography-flexstyle;
     &__intitule{
@@ -224,34 +237,14 @@
     &__coeur{
         @include coeur-palettenote;
         @media (min-width:380px){
-            margin-left: 150px;
+            margin-left: 140px;
         } 
         @media (min-width:500px){
-            margin-left: 250px;
+            margin-left: 240px;
         }
     }
 }
 .titre-française{
-    @extend %typography-flexstyle;
-    &__intitule{
-        @include intitule-resto;
-    }
-    &__intitule--bold{
-        @include intitule-gras;
-    }
-    &__coeur{
-        margin-left: 150px;
-        margin-top: 20px;
-        color: #7e7e7e;
-        @media (min-width:380px){
-            margin-left: 180px;
-        } 
-        @media (min-width:500px){
-            margin-left: 270px;
-        }
-    }
-}
-.titre-délice{
     @extend %typography-flexstyle;
     &__intitule{
         @include intitule-resto;
@@ -267,7 +260,27 @@
             margin-left: 170px;
         } 
         @media (min-width:500px){
-            margin-left: 270px;
+            margin-left: 260px;
+        }
+    }
+}
+.titre-délice{
+    @extend %typography-flexstyle;
+    &__intitule{
+        @include intitule-resto;
+    }
+    &__intitule--bold{
+        @include intitule-gras;
+    }
+    &__coeur{
+        margin-left: 130px;
+        margin-top: 20px;
+        color: #7e7e7e;
+        @media (min-width:380px){
+            margin-left: 170px;
+        } 
+        @media (min-width:500px){
+            margin-left: 260px;
         }
     }
 }
