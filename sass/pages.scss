@@ -1,7 +1,6 @@
 @import "./utils.scss";
 
 
-
 .header{
     @extend %typography-flexstyle;
     &__logo{
@@ -33,6 +32,7 @@
     z-index: 1;
     position: relative;
     background-color:#F0F3F5;
+    animation: bouton-presentation top 4000ms ease-in-out infinite;
     &__titre{
         @extend %typography-flexstyle;
         font-family: $policetitre;
@@ -48,18 +48,24 @@
     margin-left: 20px;
    &--intitule{
        @include intitule;
+        animation: bouton-presentation top 4000ms ease-in-out infinite;
+        
     }
 }
 .restaurant__plats{
     font-family: $policebody;
     &--intitule{
         @include intitule;
+            animation: bouton-presentation top 4000ms ease-in-out infinite;
+            
     }
 }
 .restaurant__desserts{
     font-family: $policebody;
     &--intitule{
         @include intitule;
+            animation: bouton-presentation top 4000ms ease-in-out infinite;
+            
     }
 }
 .prix{
@@ -90,3 +96,12 @@
     font-size: 1.1em;
 }
 }
+@keyframes bouton-presentation{
+    0%, 75%, 100%{
+      transform: translateY(0);
+    }
+  
+    25%{
+      transform: translateY(-20px);
+    }
+  }
