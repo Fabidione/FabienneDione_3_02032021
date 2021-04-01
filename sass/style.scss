@@ -1,6 +1,4 @@
-@import "./utils.scss";
-@import "./base.scss";
-@import "./animations.scss";
+
 /*body*/
 .loader {
     position: fixed;
@@ -8,12 +6,13 @@
     width: 100%;
     left: 0;
     top: 0;
-    z-index: 10000;
     display:flex;
     align-items:center;
     justify-content:center;
-
-    & span{
+    animation: bounce 3s ease-in-out 1;
+    opacity: 0;
+    z-index: -1;   
+        & span{
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -21,15 +20,6 @@
     background-color: $colorprimaire;
     margin: 35px 5px;
     }
-        &:nth-child(1){
-        animation: bounce 1s ease-in-out infinite;
-        }
-        &:nth-child(2){
-        animation: bounce 1s ease-in-out 1.9s infinite;
-        }
-        &:nth-child(3){
-        animation: bounce 1s ease-in-out 1.9s infinite;
-        }
 }
   
 
@@ -86,14 +76,17 @@
     &__exp{
         & a{
         text-decoration: none;
-        border: 1px solid $colorprimaire;
+        border: 1px solid transparent;
         border-radius: 20px;
         color: white;
-        background-color:$colorprimaire;
         padding: 10px 20px 10px 20px;
-        }  
+        background: linear-gradient(-10deg, #9356DC, #FF79DA);
+        transition: background-color 500ms ease-in-out;
+        opacity: 1;
+    }  
         & a:hover{
-            animation: bouton-explorer 4000ms infinite;
+        opacity: 0.8;            
+        box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
         }
     } 
 }         
@@ -111,7 +104,7 @@
         position: relative;
         right: 30px;
         top:0px;
-        padding: 8px;
+        padding: 6px 8px;
         border-radius: 50%;
         width: 30px;
         height: 30px;
@@ -134,18 +127,20 @@
             }
         }
         & li:hover{
-            animation: bouton-fonctionnement 4000ms infinite;
+            opacity: 0.6;            
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
+            background-color: lighten($colorprimaire, 25%);        
         }
     &__bouton{
       padding: 20px;
       margin: 16px 0 16px 12px;
       box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.125);
       border-radius:20px;
-      background-color: #f6f6f6;
+      background-color: rgba(216, 216, 216, 0.2);
       display: flex;
       align-items: center;
-      opacity: 1;
-      }
+      opacity:1 ;
+    }
     &__image {
       margin-right: 25px;
       color: #7e7e7e;
@@ -231,38 +226,7 @@
         } 
     }
 }  
-.fas.fa-heart{
-    color: $colorprimaire;
-}
 
-.titre-note__coeur {
-    &:hover{
-    animation: bouton-coeur 4000ms ease-in-out infinite;
-    }
-        &__coeurviolet{
-            display: inline;
-        }
-        &__coeurgris{
-            display: none;
-        }
-}
-@keyframes bouton-coeur{
-    10%      { 
-        transform: translateY(0.1);    
-    }
-    20%, 50%, 60%  { 
-        transform: translateY(0.5);    
-    }
-    70%        { 
-        transform: translateY(0.7);    
-    }
-    80%      { 
-        transform: translateY(0.8);  
-    }
-    100%    { 
-        transform: translateY(0.9);  
-    }   
-}
 
 
 .titre-palette{
@@ -276,20 +240,7 @@
     &__intitule--bold{
         @include intitule-gras;
     }
-    &__coeur{
-
-        @include coeur-palettenote;
-        @media (min-width:380px){
-            margin-left: 140px;
-        } 
-        @media (min-width:500px){
-            margin-left: 240px;
-         
-        }
-    }
-    &__coeurviolet{
-        display: none;
-    }
+    
 }
 
 
@@ -303,65 +254,32 @@
     &__intitule--bold{
         @include intitule-gras;
     }
-    &__coeur{
-        @include coeur-palettenote;
-        @media (min-width:380px){
-            margin-left: 140px;
-        } 
-        @media (min-width:500px){
-            margin-left: 240px;
-        }
-    }
-    &__coeurviolet{
-        display: none;
-    }
+    
 }
 .titre-française{
     @extend %typography-flexstyle;
     &__intitule{
         @include intitule-resto;
+        margin-right: 30px;
     }
     &__intitule--bold{
         @include intitule-gras;
     }
-    &__coeur{
-        margin-left: 140px;
-        margin-top: 20px;
-        color: #7e7e7e;
-        @media (min-width:380px){
-            margin-left: 170px;
-        } 
-        @media (min-width:500px){
-            margin-left: 260px;
-        }
-    }
-    &__coeurviolet{
-        display: none;
-    }
+    
 }
 .titre-délice{
     @extend %typography-flexstyle;
     &__intitule{
         @include intitule-resto;
+        margin-right: 20px;
     }
     &__intitule--bold{
         @include intitule-gras;
     }
-    &__coeur{
-        margin-left: 130px;
-        margin-top: 20px;
-        color: #7e7e7e;
-        @media (min-width:380px){
-            margin-left: 170px;
-        } 
-        @media (min-width:500px){
-            margin-left: 260px;
-        }
-    }
-    &__coeurviolet{
-        display: none;
-    }
+    
+
 }
+
 .image1,.image2,.image3,.image4{
     width: 290px;
     height: 150px;
@@ -373,4 +291,31 @@
     @media (min-width:500px){
         width: 420px;    
     }  
+}
+.fa1{
+    color: #7e7e7e;
+    position: absolute;
+    z-index: 4;
+    margin-left: 100px;
+}
+.fa2{
+    color:$colorprimaire;
+    position: absolute;
+    z-index: 2;
+    top: -9999px;
+    left: -9999px;
+    margin-left: 100px;
+}
+.titre__coeur{
+    &:hover{
+        .fa1{
+            opacity: 0;
+        }
+        .fa2{
+            position: relative;
+            top: 0;
+    left: 0;
+        
+        }
+    }
 }
