@@ -83,10 +83,8 @@ body {
   margin-top: 0px;
   padding-bottom: 40px;
   border-radius: 40px 40px 0px 0px;
-  z-index: 1;
   position: relative;
-  background-color: #F0F3F5;
-  animation: bouton-presentation top 4000ms ease-in-out infinite; }
+  background-color: #F0F3F5; }
   .restaurant__titre {
     font-family: "Shrikhand", sans-serif;
     margin-left: 20px; }
@@ -98,35 +96,37 @@ body {
   font-family: "Roboto", sans-serif;
   margin-left: 20px; }
   .restaurant__entrees--intitule {
+    width: 100%;
     border: 1px solid white;
     background-color: white;
     margin: 20px 20px 20px 0px;
     border-radius: 10px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
-    font-family: "Roboto", sans-serif;
-    animation: bouton-presentation top 4000ms ease-in-out infinite; }
+    font-family: "Roboto", sans-serif; }
 
 .restaurant__plats {
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  margin-left: 20px; }
   .restaurant__plats--intitule {
+    width: 100%;
     border: 1px solid white;
     background-color: white;
     margin: 20px 20px 20px 0px;
     border-radius: 10px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
-    font-family: "Roboto", sans-serif;
-    animation: bouton-presentation top 4000ms ease-in-out infinite; }
+    font-family: "Roboto", sans-serif; }
 
 .restaurant__desserts {
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  margin-left: 20px; }
   .restaurant__desserts--intitule {
+    width: 100%;
     border: 1px solid white;
     background-color: white;
     margin: 20px 20px 20px 0px;
     border-radius: 10px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
-    font-family: "Roboto", sans-serif;
-    animation: bouton-presentation top 4000ms ease-in-out infinite; }
+    font-family: "Roboto", sans-serif; }
 
 .prix {
   display: flex;
@@ -143,7 +143,8 @@ body {
 
 .commander {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin: 40px 0px 40px 0px; }
   .commander__button {
     text-align: center;
     border: 1px solid transparent;
@@ -160,11 +161,66 @@ body {
     opacity: 0.8;
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4); }
 
-@keyframes bouton-presentation {
-  0%, 75%, 100% {
-    transform: translateY(0); }
-  25% {
-    transform: translateY(-20px); } }
+.Animation_selection_menu {
+  display: flex;
+  justify-content: center;
+  background-color: #99E2D0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: width 500ms;
+  transform-origin: right;
+  width: 0;
+  top: -9999px;
+  left: -9999px;
+  position: absolute; }
+  .Animation_selection_menu:hover {
+    transition: width 500ms ease-in-out;
+    width: 50px; }
+
+.menu {
+  display: flex;
+  flex-direction: row; }
+  .menu:hover > .Animation_selection_menu {
+    transition: width 500ms ease-in-out;
+    width: 50px;
+    top: 0px;
+    left: 0px;
+    position: relative; }
+  .menu .fa-check-circle {
+    transition: transform 500ms ease-in-out;
+    transform: rotate(360deg); }
+
+.menu:hover > .restaurant__entrees--intitule {
+  transition: width 500ms ease-in-out;
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  margin-right: 0; }
+.menu:hover > .restaurant__plats--intitule {
+  transition: width 500ms ease-in-out;
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  margin-right: 0; }
+.menu:hover > .restaurant__desserts--intitule {
+  transition: width 500ms ease-in-out;
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  margin-right: 0; }
+.menu:hover .prix {
+  visibility: hidden;
+  margin-bottom: 30px; }
+
+.fa-check-circle {
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0deg);
+  display: none; }
+
 /*body*/
 .loader {
   position: fixed;
@@ -427,6 +483,12 @@ body {
   position: absolute;
   z-index: 4;
   margin-left: 100px; }
+  @media (min-width: 380px) {
+    .fa1 {
+      margin-left: 130px; } }
+  @media (min-width: 500px) {
+    .fa1 {
+      margin-left: 230px; } }
 
 .fa2 {
   color: #9356DC;
@@ -435,6 +497,12 @@ body {
   top: -9999px;
   left: -9999px;
   margin-left: 100px; }
+  @media (min-width: 380px) {
+    .fa2 {
+      margin-left: 130px; } }
+  @media (min-width: 500px) {
+    .fa2 {
+      margin-left: 230px; } }
 
 .titre__coeur:hover .fa1 {
   opacity: 0; }
