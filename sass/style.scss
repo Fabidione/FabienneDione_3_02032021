@@ -297,6 +297,12 @@
     position: absolute;
     z-index: 4;
     margin-left: 100px;
+    @media (min-width:380px){
+        margin-left: 130px;
+    } 
+    @media (min-width:500px){
+        margin-left: 230px;
+    }  
 }
 .fa2{
     color:$colorprimaire;
@@ -305,6 +311,12 @@
     top: -9999px;
     left: -9999px;
     margin-left: 100px;
+    @media (min-width:380px){
+        margin-left: 130px;
+    } 
+    @media (min-width:500px){
+        margin-left: 230px;
+    }  
 }
 .titre__coeur{
     &:hover{
@@ -314,7 +326,7 @@
         .fa2{
             position: relative;
             top: 0;
-    left: 0;
+            left: 0;
         
         }
     }
