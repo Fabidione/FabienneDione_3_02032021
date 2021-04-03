@@ -172,7 +172,9 @@ body {
   width: 0;
   top: -9999px;
   left: -9999px;
-  position: absolute; }
+  position: absolute;
+  margin-top: 20px;
+  margin-bottom: 20px; }
   .Animation_selection_menu:hover {
     transition: width 500ms ease-in-out;
     width: 50px; }
@@ -211,6 +213,9 @@ body {
 .menu:hover .prix {
   visibility: hidden;
   margin-bottom: 30px; }
+.menu:hover .fa-check-circle {
+  transform: rotate(360deg);
+  transition: transform 500Ms; }
 
 .fa-check-circle {
   color: white;
