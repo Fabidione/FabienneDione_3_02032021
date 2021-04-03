@@ -46,6 +46,7 @@
    &--intitule{
        width: 100%;
        @include intitule;
+       
         
     }
 }
@@ -115,6 +116,8 @@
     top: -9999px;
     left: -9999px;
     position: absolute;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     &:hover {
         transition: width 500ms ease-in-out;
@@ -140,35 +143,28 @@
 }
 .menu{
     &:hover > .restaurant__entrees--intitule{
-    transition: width 500ms ease-in-out;
-    width:85%;
-    display:flex;       
-    flex-direction: row;
-    margin-right: 0;
+    @include animation-boucle;
+
     }
     &:hover > .restaurant__plats--intitule{
-        transition: width 500ms ease-in-out;
-        width:85%;
-        display:flex;       
-        flex-direction: row;
-        margin-right: 0;
+        @include animation-boucle;
+
     }
     &:hover > .restaurant__desserts--intitule{
-        transition: width 500ms ease-in-out;
-        width:85%;
-        display:flex;       
-        flex-direction: row;
-        margin-right: 0;
+        @include animation-boucle;
+
     }
     &:hover{
         .prix{
             visibility: hidden;  
-            margin-bottom: 30px;      
-        }  
+            margin-bottom: 30px;  
+        } 
+        .fa-check-circle{
+        transform: rotate(360deg);
+        transition: transform 500Ms;
+        } 
     }
 }
-
-
 .fa-check-circle {  
     color:white;
     width:100%;
