@@ -73,6 +73,39 @@ body {
 .image {
   height: 170px; }
 
+.fa1 {
+  color: #7e7e7e;
+  position: absolute;
+  z-index: 4;
+  margin-left: 100px; }
+  @media (min-width: 380px) {
+    .fa1 {
+      margin-left: 130px; } }
+  @media (min-width: 500px) {
+    .fa1 {
+      margin-left: 230px; } }
+
+.fa2 {
+  color: #9356DC;
+  position: absolute;
+  z-index: 2;
+  top: -9999px;
+  left: -9999px;
+  margin-left: 100px; }
+  @media (min-width: 380px) {
+    .fa2 {
+      margin-left: 130px; } }
+  @media (min-width: 500px) {
+    .fa2 {
+      margin-left: 230px; } }
+
+.titre__coeur:hover .fa1 {
+  opacity: 0; }
+.titre__coeur:hover .fa2 {
+  position: relative;
+  top: 0;
+  left: 0; }
+
 .restaurant-image {
   max-width: 100%;
   height: 210px;
