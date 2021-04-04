@@ -16,7 +16,7 @@
     }
 }
 .image{
-    height: 170px;
+    height: 270px;
 }
 .fa1{
     color: #7e7e7e;
@@ -59,7 +59,7 @@
 }
 .restaurant-image{ 
     max-width: 100%;
-    height: 210px;
+    height: 310px;
     width: 100%;
     object-fit: cover;
 }
@@ -182,6 +182,7 @@
     
 }
 .menu{
+    animation: bouton-one 900ms ease-in-out both;
     &:hover > .restaurant__entrees--intitule{
     @include animation-boucle;
 
@@ -199,10 +200,6 @@
             visibility: hidden;  
             margin-bottom: 30px;  
         } 
-        .fa-check-circle{
-        transform: rotate(360deg);
-        transition: transform 500Ms;
-        } 
     }
 }
 .fa-check-circle {  
@@ -215,3 +212,27 @@
     display:none;
     
 }
+.restaurant__animation .animation2{animation-delay: 300ms;}	
+.restaurant__animation .animation3{animation-delay: 500ms;}
+.restaurant__animation .animation4{animation-delay: 700ms;}
+.restaurant__animation .animation5{animation-delay: 900ms;}
+.restaurant__animation .animation6{animation-delay: 1s;}
+.restaurant__animation .animation7{animation-delay: 1.4s;}
+.restaurant__animation .animation8{animation-delay: 1.6s;}
+.restaurant__animation .animation9{animation-delay: 1.8s;}
+.restaurant__animation .animation10{animation-delay: 2s;}
+
+ 
+@keyframes bouton-one	
+	{
+	from
+	{
+	opacity: 0;
+	transform: translateY(20px);
+	}
+	
+	to
+	{
+	opacity: 1;
+	}
+	}
