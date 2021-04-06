@@ -59,6 +59,17 @@ body {
   100% {
     opacity: 0;
     z-index: -1; } }
+@keyframes bouton-one {
+  from {
+    opacity: 0;
+    transform: translateY(20px); }
+  to {
+    opacity: 1; } }
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
 .header__logo {
   text-align: center;
   font-family: "Shrikhand", sans-serif;
@@ -75,29 +86,13 @@ body {
 
 .fa1 {
   color: #7e7e7e;
-  position: absolute;
-  z-index: 4;
-  margin-left: 100px; }
-  @media (min-width: 380px) {
-    .fa1 {
-      margin-left: 130px; } }
-  @media (min-width: 500px) {
-    .fa1 {
-      margin-left: 230px; } }
+  position: absolute; }
 
 .fa2 {
   color: #9356DC;
   position: absolute;
-  z-index: 2;
   top: -9999px;
-  left: -9999px;
-  margin-left: 100px; }
-  @media (min-width: 380px) {
-    .fa2 {
-      margin-left: 130px; } }
-  @media (min-width: 500px) {
-    .fa2 {
-      margin-left: 230px; } }
+  left: -9999px; }
 
 .titre__coeur:hover .fa1 {
   opacity: 0; }
@@ -127,52 +122,76 @@ body {
 
 .restaurant__entrees {
   font-family: "Roboto", sans-serif;
-  margin-left: 20px; }
+  margin-left: 20px;
+  margin-right: 20px; }
   .restaurant__entrees--intitule {
-    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
     border: 1px solid white;
     background-color: white;
-    margin: 20px 20px 20px 0px;
     border-radius: 10px;
+    margin: 20px 0px 20px 0px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
-    font-family: "Roboto", sans-serif; }
+    font-family: "Roboto", sans-serif;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
 
 .restaurant__plats {
   font-family: "Roboto", sans-serif;
-  margin-left: 20px; }
+  margin-left: 20px;
+  margin-right: 20px; }
   .restaurant__plats--intitule {
-    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
     border: 1px solid white;
     background-color: white;
-    margin: 20px 20px 20px 0px;
     border-radius: 10px;
+    margin: 20px 0px 20px 0px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
-    font-family: "Roboto", sans-serif; }
+    font-family: "Roboto", sans-serif;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
 
 .restaurant__desserts {
   font-family: "Roboto", sans-serif;
-  margin-left: 20px; }
+  margin-left: 20px;
+  margin-right: 20px; }
   .restaurant__desserts--intitule {
-    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
     border: 1px solid white;
     background-color: white;
-    margin: 20px 20px 20px 0px;
     border-radius: 10px;
+    margin: 20px 0px 20px 0px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
-    font-family: "Roboto", sans-serif; }
+    font-family: "Roboto", sans-serif;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
 
 .prix {
-  display: flex;
-  justify-content: flex-end;
   font-family: "Roboto", sans-serif;
-  margin-right: 10px; }
+  margin-right: 5px;
+  margin-top: 30px; }
 
 .titre {
   padding-left: 8px;
-  height: 5px;
-  max-width: 250px;
   font-size: 0.9em;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
 
 .commander {
   display: flex;
@@ -200,69 +219,44 @@ body {
   background-color: #99E2D0;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  width: 0;
   transition: width 500ms;
   transform-origin: right;
-  width: 0;
   top: -9999px;
   left: -9999px;
   position: absolute;
   margin-top: 20px;
   margin-bottom: 20px; }
-  .Animation_selection_menu:hover {
-    transition: width 500ms ease-in-out;
-    width: 50px; }
+
+.fa-check-circle {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; }
 
 .menu {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  animation: bouton-one 900ms ease-in-out both; }
   .menu:hover > .Animation_selection_menu {
     transition: width 500ms ease-in-out;
     width: 50px;
     top: 0px;
     left: 0px;
     position: relative; }
-  .menu .fa-check-circle {
-    transition: transform 500ms ease-in-out;
-    transform: rotate(360deg); }
-
-.menu {
-  animation: bouton-one 900ms ease-in-out both; }
+  .menu:hover .fa-check-circle {
+    animation: rotating 0.3s;
+    margin-right: 5px; }
   .menu:hover > .restaurant__entrees--intitule {
-    transition: width 500ms ease-in-out;
-    width: 85%;
-    display: flex;
-    flex-direction: row;
-    margin-right: 0;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px; }
   .menu:hover > .restaurant__plats--intitule {
-    transition: width 500ms ease-in-out;
-    width: 85%;
-    display: flex;
-    flex-direction: row;
-    margin-right: 0;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px; }
   .menu:hover > .restaurant__desserts--intitule {
-    transition: width 500ms ease-in-out;
-    width: 85%;
-    display: flex;
-    flex-direction: row;
-    margin-right: 0;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px; }
-  .menu:hover .prix {
-    visibility: hidden;
-    margin-bottom: 30px; }
-
-.fa-check-circle {
-  color: white;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: rotate(0deg);
-  display: none; }
 
 .restaurant__animation .animation2 {
   animation-delay: 300ms; }
@@ -291,12 +285,6 @@ body {
 .restaurant__animation .animation10 {
   animation-delay: 2s; }
 
-@keyframes bouton-one {
-  from {
-    opacity: 0;
-    transform: translateY(20px); }
-  to {
-    opacity: 1; } }
 /*body*/
 .loader {
   position: fixed;
@@ -556,9 +544,7 @@ body {
 
 .fa1 {
   color: #7e7e7e;
-  position: absolute;
-  z-index: 4;
-  margin-left: 100px; }
+  position: absolute; }
   @media (min-width: 380px) {
     .fa1 {
       margin-left: 130px; } }
@@ -567,12 +553,9 @@ body {
       margin-left: 230px; } }
 
 .fa2 {
-  color: #9356DC;
   position: absolute;
-  z-index: 2;
   top: -9999px;
-  left: -9999px;
-  margin-left: 100px; }
+  left: -9999px; }
   @media (min-width: 380px) {
     .fa2 {
       margin-left: 130px; } }
@@ -580,6 +563,12 @@ body {
     .fa2 {
       margin-left: 230px; } }
 
+.titre__coeur i {
+  transition: opacity 0.3s ease-in-out; }
+.titre__coeur:hover i {
+  background: linear-gradient(-10deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 .titre__coeur:hover .fa1 {
   opacity: 0; }
 .titre__coeur:hover .fa2 {
