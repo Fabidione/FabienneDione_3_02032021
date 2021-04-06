@@ -21,28 +21,13 @@
 .fa1{
     color: #7e7e7e;
     position: absolute;
-    z-index: 4;
-    margin-left: 100px;
-    @media (min-width:380px){
-        margin-left: 130px;
-    } 
-    @media (min-width:500px){
-        margin-left: 230px;
-    }  
 }
 .fa2{
     color:$colorprimaire;
     position: absolute;
-    z-index: 2;
     top: -9999px;
     left: -9999px;
-    margin-left: 100px;
-    @media (min-width:380px){
-        margin-left: 130px;
-    } 
-    @media (min-width:500px){
-        margin-left: 230px;
-    }  
+    
 }
 .titre__coeur{
     &:hover{
@@ -77,49 +62,60 @@
     i{
         margin-top: 30px;
         margin-right:-20px;
+
    }
 }
 
 .restaurant__entrees{
     font-family: $policebody;
     margin-left: 20px;
+    margin-right: 20px;
    &--intitule{
-       width: 100%;
-       @include intitule;
-       
-        
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        flex: 1;
+        @include intitule;  
     }
 }
 .restaurant__plats{
     font-family: $policebody;
     margin-left: 20px;
+    margin-right: 20px;
     &--intitule{
-        width: 100%;
-        @include intitule;
-            
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        flex: 1;
+        @include intitule;  
+        
     }
 }
 .restaurant__desserts{
     font-family: $policebody;
     margin-left: 20px;
+    margin-right: 20px;
     &--intitule{
-        width: 100%;
-        @include intitule;
-            
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        flex: 1;  
+        @include intitule;  
     }
 }
 .prix{
-    display: flex;
-    justify-content: flex-end;
+    
     font-family: $policebody;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-top: 30px;
     }
 .titre{
     padding-left: 8px;
-    height: 5px;
-    max-width: 250px;
     font-size: 0.9em;
     font-family: $policebody;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .commander{
     display: flex;
@@ -150,68 +146,56 @@
     background-color: $colortertiaire;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    width: 0;
     transition: width 500ms;
     transform-origin: right;
-    width: 0;
     top: -9999px;
     left: -9999px;
     position: absolute;
     margin-top: 20px;
     margin-bottom: 20px;
-
-    &:hover {
-        transition: width 500ms ease-in-out;
-        width:50px;
-        }
 }
+.fa-check-circle {  
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:none;
+}
+
+
 .menu{
     display:flex;
     flex-direction: row;
+    animation: bouton-one 900ms ease-in-out both;
     &:hover > .Animation_selection_menu { 
     transition: width 500ms ease-in-out;
     width:50px;
     top: 0px;
     left: 0px;
     position: relative;
+    }
+    &:hover .fa-check-circle{
+        animation: rotating 0.3s;
+        margin-right: 5px;
 
     }
-    .fa-check-circle { 
-        transition: transform 500ms ease-in-out;
-        transform: rotate(360deg);
-    }
-    
-}
-.menu{
-    animation: bouton-one 900ms ease-in-out both;
     &:hover > .restaurant__entrees--intitule{
-    @include animation-boucle;
-
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
     &:hover > .restaurant__plats--intitule{
-        @include animation-boucle;
-
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
     &:hover > .restaurant__desserts--intitule{
-        @include animation-boucle;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        }
+}
 
-    }
-    &:hover{
-        .prix{
-            visibility: hidden;  
-            margin-bottom: 30px;  
-        } 
-    }
-}
-.fa-check-circle {  
-    color:white;
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotate(0deg);
-    display:none;
-    
-}
+
+
 .restaurant__animation .animation2{animation-delay: 300ms;}	
 .restaurant__animation .animation3{animation-delay: 500ms;}
 .restaurant__animation .animation4{animation-delay: 700ms;}
@@ -223,16 +207,3 @@
 .restaurant__animation .animation10{animation-delay: 2s;}
 
  
-@keyframes bouton-one	
-	{
-	from
-	{
-	opacity: 0;
-	transform: translateY(20px);
-	}
-	
-	to
-	{
-	opacity: 1;
-	}
-	}

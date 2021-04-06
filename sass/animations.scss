@@ -12,3 +12,25 @@
 }
   }
   
+  @keyframes bouton-one	
+	{
+	from
+	{
+	opacity: 0;
+	transform: translateY(20px);
+	}
+	
+	to
+	{
+	opacity: 1;
+	}
+	}
+  
+	@keyframes rotating {
+		from{
+			-webkit-transform: rotate(0deg);
+		}
+		to{
+			-webkit-transform: rotate(360deg);
+		}
+	}

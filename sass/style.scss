@@ -295,8 +295,6 @@
 .fa1{
     color: #7e7e7e;
     position: absolute;
-    z-index: 4;
-    margin-left: 100px;
     @media (min-width:380px){
         margin-left: 130px;
     } 
@@ -305,12 +303,9 @@
     }  
 }
 .fa2{
-    color:$colorprimaire;
     position: absolute;
-    z-index: 2;
     top: -9999px;
     left: -9999px;
-    margin-left: 100px;
     @media (min-width:380px){
         margin-left: 130px;
     } 
@@ -319,7 +314,15 @@
     }  
 }
 .titre__coeur{
+    & i{
+        transition: opacity 0.3s ease-in-out;
+    }
     &:hover{
+        i{
+            background: linear-gradient(-10deg, #9356DC, #FF79DA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         .fa1{
             opacity: 0;
         }
@@ -327,7 +330,6 @@
             position: relative;
             top: 0;
             left: 0;
-        
         }
     }
 }
