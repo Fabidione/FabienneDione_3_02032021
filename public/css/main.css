@@ -94,12 +94,14 @@ body {
   top: -9999px;
   left: -9999px; }
 
-.titre__coeur:hover .fa1 {
-  opacity: 0; }
-.titre__coeur:hover .fa2 {
-  position: relative;
-  top: 0;
-  left: 0; }
+.titre__coeur {
+  margin-left: 20px; }
+  .titre__coeur:hover .fa1 {
+    opacity: 0; }
+  .titre__coeur:hover .fa2 {
+    position: relative;
+    top: 0;
+    left: 0; }
 
 .restaurant-image {
   max-width: 100%;
@@ -117,8 +119,7 @@ body {
     font-family: "Shrikhand", sans-serif;
     margin-left: 20px; }
   .restaurant i {
-    margin-top: 30px;
-    margin-right: -20px; }
+    margin-top: 25px; }
 
 .restaurant__entrees {
   font-family: "Roboto", sans-serif;
@@ -339,7 +340,7 @@ body {
   .presentation__res {
     font-weight: bold;
     margin-bottom: 10px;
-    font-size: 1.2em; }
+    font-size: 1.3em; }
   .presentation__dec {
     margin-bottom: 30px;
     font-size: 1.2em;
@@ -503,32 +504,27 @@ body {
         width: 420px; } }
 
 .titre-palette {
+  margin-left: 10px;
   text-decoration: none; }
-  .titre-palette__intitule {
-    margin-top: -10px;
-    margin-left: 8px; }
   .titre-palette__intitule--bold {
     font-weight: bold; }
 
-.titre-note__intitule {
-  margin-top: -10px;
-  margin-left: 8px; }
-.titre-note__intitule--bold {
-  font-weight: bold; }
+.titre-note {
+  margin-left: 10px; }
+  .titre-note__intitule--bold {
+    font-weight: bold; }
 
-.titre-française__intitule {
-  margin-left: 8px;
-  margin-top: 10px;
-  margin-right: 30px; }
-.titre-française__intitule--bold {
-  font-weight: bold; }
+.titre-française {
+  margin-top: 20px;
+  margin-left: 10px; }
+  .titre-française__intitule--bold {
+    font-weight: bold; }
 
-.titre-délice__intitule {
-  margin-left: 8px;
-  margin-top: 10px;
-  margin-right: 20px; }
-.titre-délice__intitule--bold {
-  font-weight: bold; }
+.titre-délice {
+  margin-top: 20px;
+  margin-left: 10px; }
+  .titre-délice__intitule--bold {
+    font-weight: bold; }
 
 .image1, .image2, .image3, .image4 {
   width: 290px;
@@ -542,26 +538,42 @@ body {
     .image1, .image2, .image3, .image4 {
       width: 420px; } }
 
-.fa1 {
+@media (max-width: 380px) {
+  .titre__coeurs {
+    margin-left: 50px; } }
+@media (min-width: 380px) {
+  .titre__coeurs {
+    margin-left: 40px; } }
+@media (min-width: 500px) {
+  .titre__coeurs {
+    margin-left: 40px; } }
+
+.fas1 {
   color: #7e7e7e;
   position: absolute; }
   @media (min-width: 380px) {
-    .fa1 {
-      margin-left: 130px; } }
+    .fas1 {
+      margin-left: 110px; } }
   @media (min-width: 500px) {
-    .fa1 {
-      margin-left: 230px; } }
+    .fas1 {
+      margin-left: 200px; } }
+  @media (max-width: 380px) {
+    .fas1 {
+      margin-left: 80px; } }
 
-.fa2 {
+.fas2 {
   position: absolute;
   top: -9999px;
   left: -9999px; }
   @media (min-width: 380px) {
-    .fa2 {
-      margin-left: 130px; } }
+    .fas2 {
+      margin-left: 110px; } }
   @media (min-width: 500px) {
-    .fa2 {
-      margin-left: 230px; } }
+    .fas2 {
+      margin-left: 200px; } }
+  @media (max-width: 380px) {
+    .fas2 {
+      margin-left: 80px; } }
 
 .titre__coeur i {
   transition: opacity 0.3s ease-in-out; }
@@ -569,9 +581,9 @@ body {
   background: linear-gradient(-10deg, #9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
-.titre__coeur:hover .fa1 {
+.titre__coeur:hover .fas1 {
   opacity: 0; }
-.titre__coeur:hover .fa2 {
+.titre__coeur:hover .fas2 {
   position: relative;
   top: 0;
   left: 0; }
