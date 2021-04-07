@@ -65,7 +65,7 @@
     &__res{
         font-weight: bold;
         margin-bottom: 10px;
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
     &__dec{
         margin-bottom: 30px;
@@ -228,15 +228,10 @@
 }  
 
 
-
 .titre-palette{
     @extend %typography-flexstyle;
+    margin-left: 10px;
     text-decoration: none;
-
-    &__intitule{
-        margin-top: -10px;
-        margin-left: 8px;
-    }
     &__intitule--bold{
         @include intitule-gras;
     }
@@ -247,38 +242,35 @@
 
 .titre-note{
     @extend %typography-flexstyle;
-    &__intitule{
-        margin-top: -10px;
-        margin-left: 8px;
-    }
+    margin-left: 10px;
+    
     &__intitule--bold{
         @include intitule-gras;
     }
     
 }
 .titre-française{
+    margin-top: 20px;
+    margin-left: 10px;
     @extend %typography-flexstyle;
-    &__intitule{
-        @include intitule-resto;
-        margin-right: 30px;
-    }
+    
     &__intitule--bold{
         @include intitule-gras;
     }
     
 }
 .titre-délice{
+    margin-top: 20px;
+    margin-left: 10px;
     @extend %typography-flexstyle;
-    &__intitule{
-        @include intitule-resto;
-        margin-right: 20px;
-    }
+    
     &__intitule--bold{
         @include intitule-gras;
     }
     
 
 }
+
 
 .image1,.image2,.image3,.image4{
     width: 290px;
@@ -292,26 +284,45 @@
         width: 420px;    
     }  
 }
-.fa1{
+.titre__coeurs{
+    @media (max-width: 380px){
+        margin-left:50px;
+    }
+    @media (min-width:380px){
+        margin-left: 40px;
+    }
+    @media (min-width:500px){
+    margin-left: 40px;
+} 
+}
+.fas1{
     color: #7e7e7e;
     position: absolute;
     @media (min-width:380px){
-        margin-left: 130px;
+        margin-left: 110px;
     } 
     @media (min-width:500px){
-        margin-left: 230px;
-    }  
-}
-.fa2{
+        margin-left: 200px;
+    }
+     @media (max-width: 380px){
+            margin-left:80px;
+    } 
+} 
+
+
+.fas2{
     position: absolute;
     top: -9999px;
     left: -9999px;
     @media (min-width:380px){
-        margin-left: 130px;
+        margin-left: 110px;
     } 
     @media (min-width:500px){
-        margin-left: 230px;
-    }  
+        margin-left: 200px;
+    }
+     @media (max-width: 380px){
+            margin-left:80px;
+    } 
 }
 .titre__coeur{
     & i{
@@ -323,10 +334,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .fa1{
+        .fas1{
             opacity: 0;
         }
-        .fa2{
+        .fas2{
             position: relative;
             top: 0;
             left: 0;
