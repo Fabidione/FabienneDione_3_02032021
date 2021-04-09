@@ -21,9 +21,6 @@
     margin: 35px 5px;
     }
 }
-  
-
-  
 
 .header1{
     display: flex;
@@ -35,7 +32,6 @@
         font-size: 1.7em;
         box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
         margin-bottom: 6px;
-
     }
     &__localisation{
         text-align: center;
@@ -49,8 +45,6 @@
     border: transparent;
     background-color:darken($backgroundcolor, 5%);
     font-size: 1em;
-
-
 }
 ::placeholder
 {
@@ -90,8 +84,7 @@
         }
     } 
 }         
-
-  .fonctionnement {
+.fonctionnement {
     margin: 60px 10px 60px 15px;
     font-family: $policebody;
     @media (min-width:1024px){
@@ -113,7 +106,7 @@
     &__title {
       @media (min-width:1024px){
           width: 100%;  
-    }
+        }
     }
     &__lesbutons{
       margin: 0;
@@ -145,8 +138,7 @@
       margin-right: 25px;
       color: #7e7e7e;
     }
-  }
-
+}
 .restaurants{
     background-color: $backgroundcolor;
     font-family: $policebody;
@@ -226,8 +218,6 @@
         } 
     }
 }  
-
-
 .titre-palette{
     @extend %typography-flexstyle;
     margin-left: 10px;
@@ -235,19 +225,14 @@
     &__intitule--bold{
         @include intitule-gras;
     }
-    
 }
-
-
-
 .titre-note{
     @extend %typography-flexstyle;
     margin-left: 10px;
     
     &__intitule--bold{
         @include intitule-gras;
-    }
-    
+    } 
 }
 .titre-française{
     margin-top: 20px;
@@ -256,8 +241,7 @@
     
     &__intitule--bold{
         @include intitule-gras;
-    }
-    
+    } 
 }
 .titre-délice{
     margin-top: 20px;
@@ -267,11 +251,7 @@
     &__intitule--bold{
         @include intitule-gras;
     }
-    
-
 }
-
-
 .image1,.image2,.image3,.image4{
     width: 290px;
     height: 150px;
@@ -293,7 +273,7 @@
     }
     @media (min-width:500px){
     margin-left: 40px;
-} 
+    } 
 }
 .fas1{
     color: #7e7e7e;
@@ -308,8 +288,6 @@
             margin-left:80px;
     } 
 } 
-
-
 .fas2{
     position: absolute;
     top: -9999px;

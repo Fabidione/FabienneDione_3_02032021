@@ -1,5 +1,4 @@
 
-
 .header{
     @extend %typography-flexstyle;
     &__logo{
@@ -66,7 +65,6 @@
 
    }
 }
-
 .restaurant__entrees{
     font-family: $policebody;
     margin-left: 20px;
@@ -140,7 +138,6 @@
         box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
     }     
 }
-
 .Animation_selection_menu {
     display: flex;
     justify-content:center;
@@ -163,8 +160,6 @@
     align-items: center;
     display:none;
 }
-
-
 .menu{
     display:flex;
     flex-direction: row;
@@ -194,9 +189,6 @@
         border-bottom-right-radius: 0px;
         }
 }
-
-
-
 .restaurant__animation .animation2{animation-delay: 300ms;}	
 .restaurant__animation .animation3{animation-delay: 500ms;}
 .restaurant__animation .animation4{animation-delay: 700ms;}
