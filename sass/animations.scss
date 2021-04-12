@@ -12,17 +12,26 @@
 }
   }
   
-@keyframes bouton-one	
-	{
-	from
-	{
-	opacity: 0;
-	transform: translateY(20px);
-	}
-	
-	to
-	{
-	opacity: 1;
-	}
-	}
+  @keyframes bouton-one {
+    0% {
+        transform:translateY(40px);
+        opacity: 0;
+    }
+    25% {
+        transform:translateY(30px);
+        opacity: 0;
+    }
+    50% {
+        transform:translateY(20px);
+        opacity: 0;
+    }
+    75% {
+        transform:translateY(10px);
+        opacity: 0.3;
+    }
+    100% {
+        transform:translateY(0);
+        opacity: 1;
+    }
+}
   
