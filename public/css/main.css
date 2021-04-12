@@ -60,10 +60,20 @@ body {
     opacity: 0;
     z-index: -1; } }
 @keyframes bouton-one {
-  from {
-    opacity: 0;
-    transform: translateY(20px); }
-  to {
+  0% {
+    transform: translateY(40px);
+    opacity: 0; }
+  25% {
+    transform: translateY(30px);
+    opacity: 0; }
+  50% {
+    transform: translateY(20px);
+    opacity: 0; }
+  75% {
+    transform: translateY(10px);
+    opacity: 0.3; }
+  100% {
+    transform: translateY(0);
     opacity: 1; } }
 .header__logo {
   text-align: center;
@@ -228,7 +238,7 @@ body {
 .menu {
   display: flex;
   flex-direction: row;
-  animation: bouton-one 1s ease-in-out both; }
+  animation: bouton-one 2s ease-in-out both; }
   .menu:hover > .Animation_selection_menu {
     transition: width 500ms ease-in-out;
     width: 50px;
@@ -249,33 +259,6 @@ body {
   .menu:hover > .restaurant__desserts--intitule {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px; }
-
-.restaurant__animation .animation2 {
-  animation-delay: 1s; }
-
-.restaurant__animation .animation3 {
-  animation-delay: 2s; }
-
-.restaurant__animation .animation4 {
-  animation-delay: 3s; }
-
-.restaurant__animation .animation5 {
-  animation-delay: 4s; }
-
-.restaurant__animation .animation6 {
-  animation-delay: 5s; }
-
-.restaurant__animation .animation7 {
-  animation-delay: 6s; }
-
-.restaurant__animation .animation8 {
-  animation-delay: 7s; }
-
-.restaurant__animation .animation9 {
-  animation-delay: 8s; }
-
-.restaurant__animation .animation10 {
-  animation-delay: 9s; }
 
 /*body*/
 .loader {
