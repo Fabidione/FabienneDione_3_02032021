@@ -23,21 +23,23 @@
 }
 
 .header1{
-    display: flex;
-    flex-direction: column;
-    &__logo{
-        text-align: center;
+    display: flex;   
+    flex-direction:  column;
+     &__logo{
         font-family: $policetitre;
-        padding: 15px 0px 15px 0px;
         font-size: 1.7em;
         box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
         margin-bottom: 6px;
+        padding: 15px 35px 15px 0px;
+        text-align: center;
+
     }
     &__localisation{
-        text-align: center;
         font-family: $policebody;
-        padding: 1px 0px 1px 0px;
         background-color:darken($backgroundcolor, 5%);
+        padding: 1px 0px 10px 0px;
+        text-align: center;
+
     }
 }
 .champ
@@ -77,6 +79,7 @@
         background: linear-gradient(-10deg, #9356DC, #FF79DA);
         transition: background-color 500ms ease-in-out;
         opacity: 1;
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
     }  
         & a:hover{
         opacity: 0.8;            
@@ -85,7 +88,7 @@
     } 
 }         
 .fonctionnement {
-    margin: 60px 10px 60px 15px;
+    margin: 60px 15px 60px 15px;
     font-family: $policebody;
     @media (min-width:1024px){
         margin-left: 40px;
@@ -142,12 +145,14 @@
 .restaurants{
     background-color: $backgroundcolor;
     font-family: $policebody;
-    padding: 30px 0px 30px 0px;
+    margin: auto;
+    padding: 30px 0px;
     @media (min-width:500px){
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
+
     }
     &__stick{
         background-color: $colortertiaire;
@@ -165,16 +170,16 @@
         }
     }
     &__titre{
-        @include margebodystyle;
+        margin-left: 35px;
+        
         @media (min-width:380px){
-            margin-left: 40px;
+            @include margin-responsive;   
         }  
         @media (min-width:500px){
             width: 100%;
             text-align: center;
-
-        }
-    }
+        } 
+    }    
     &__palette figure{
         @include resto-figure;
         @media (min-width:380px){
@@ -183,12 +188,12 @@
         @media (min-width:500px){
             @include largeur-responsive;
         } 
-        }
         & a{
             text-decoration: none;
             color: black;
 
         }
+    }
     &__note figure{
         @include resto-figure;
         @media (min-width:380px){
@@ -197,6 +202,11 @@
         @media (min-width:500px){
             @include largeur-responsive;
         } 
+        & a{
+            text-decoration: none;
+            color: black;
+
+        }
     }
     &__française figure{
         @include resto-figure;
@@ -205,7 +215,12 @@
         } 
         @media (min-width:500px){
             @include largeur-responsive;
-        }  
+        } 
+        & a{
+            text-decoration: none;
+            color: black;
+
+        } 
         
     }
     &__délice figure{
@@ -216,12 +231,20 @@
         @media (min-width:500px){
             @include largeur-responsive;
         } 
+        & a{
+            text-decoration: none;
+            color: black;
+
+        }
     }
 }  
 .titre-palette{
     @extend %typography-flexstyle;
     margin-left: 10px;
     text-decoration: none;
+    &__intitule{
+        margin-right: 20px;
+    }
     &__intitule--bold{
         @include intitule-gras;
     }
@@ -229,7 +252,9 @@
 .titre-note{
     @extend %typography-flexstyle;
     margin-left: 10px;
-    
+    &__intitule{
+        margin-right: 20px;
+    }
     &__intitule--bold{
         @include intitule-gras;
     } 
@@ -275,9 +300,9 @@
     margin-left: 40px;
     } 
 }
-.fas1{
+.far.fa-heart{
     color: #7e7e7e;
-    position: absolute;
+    font-size: 30px; 
     @media (min-width:380px){
         margin-left: 110px;
     } 
@@ -288,37 +313,15 @@
             margin-left:80px;
     } 
 } 
-.fas2{
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-    @media (min-width:380px){
-        margin-left: 110px;
-    } 
-    @media (min-width:500px){
-        margin-left: 200px;
-    }
-     @media (max-width: 380px){
-            margin-left:80px;
-    } 
-}
-.titre__coeur{
-    & i{
-        transition: opacity 0.3s ease-in-out;
-    }
+
+.titre__coeur{    
     &:hover{
-        i{
+        .far.far.fa-heart{
+            font-weight: bold; 
+            font-size: 30px; 
             background: linear-gradient(-10deg, #9356DC, #FF79DA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-        .fas1{
-            opacity: 0;
-        }
-        .fas2{
-            position: relative;
-            top: 0;
-            left: 0;
-        }
+    }
     }
 }

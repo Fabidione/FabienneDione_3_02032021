@@ -10,9 +10,10 @@
     background-color: white;
     border-radius: 10px;
     width: 290px;
-    margin-left: 15px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
     padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 @mixin intitule-gras{
     font-weight: bold;
@@ -21,20 +22,16 @@
     border: 1px solid white;
     background-color: white;
     border-radius:10px ;
-    margin:20px 0px 20px 0px;
+    margin:20px 0px 0px 0px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
     font-family: $policebody;
-    height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-@mixin margebodystyle{
-    margin-left: 15px;
-
-}
 @mixin margin-responsive{
-    margin-left: 40px;
+    margin-left: auto;
+    margin-right: auto;
     width: 320px; 
 }
 @mixin largeur-responsive{
