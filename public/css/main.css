@@ -114,9 +114,11 @@ body {
   position: relative; }
   .restaurant__titre {
     font-family: "Shrikhand", sans-serif;
-    margin-left: 20px; }
+    margin-left: 20px;
+    font-size: 0.9em; }
   .restaurant i {
-    margin-top: 25px; }
+    margin-top: 25px;
+    margin-right: 10px; }
 
 .restaurant__entrees {
   font-family: "Roboto", sans-serif;
